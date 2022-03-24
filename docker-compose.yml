@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app:cached
+      - /app/web-start/node_modules
+    ports:
+      - "9005:9005"
+      - "5000:5000"
+    stdin_open: true
+    tty: true
